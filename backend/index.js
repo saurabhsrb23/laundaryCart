@@ -7,13 +7,8 @@ require('./Register/RegisterModel/registerModel')
 app.use(express.json())
 
 app.use(require('./Register/register'))
-
 app.use(require('./Order/order'))
 
-
-app.get('/', (req, res) => res.send('Hello World!'))
-
-
-
+app.get('/', (req, res) => res.send('Hello from Laundry Service!'))
 
 app.listen(port, () => console.log(` app listening on port ${port}!`))
