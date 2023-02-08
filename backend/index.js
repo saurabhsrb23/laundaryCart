@@ -4,7 +4,11 @@ const port = process.env.port || 5000
 require('./connectionDB.js')
 require('./Order/orderModel/ordermodel')
 app.use(express.json())
+
+app.use(require('./order/order.js'))
+
 app.use(require('./Order/pastorder'))
+
 
 
 
