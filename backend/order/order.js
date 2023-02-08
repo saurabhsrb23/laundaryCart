@@ -1,34 +1,9 @@
 const express = require('express')
 const { default: mongoose, Model } = require('mongoose')
-const Order = require('./orderModel/createorderModel')
 
 const router = express.Router()
 const ORDER =mongoose.model("ORDER")
 
-router.get('/allorder', async(req, res) => {
-    try{
-
-        const result= await ORDER.find().then(data=>res.json(data))
-        res.send(result)
-    }
-    catch(err){
-        res.status(500).json({message:err.message})
-    }
-})
-
-router.get('/products', async(req, res) => {
-    try{
-        
-        const data = await ORDER.find().sort({_id:-1});
-        res.json(data);
-    }
-    catch(e){
-        res.status(406).json({
-            status:"Failed",
-            message:e.message,
-        })
-    }
-})
 
 router.post('/createorder',async(req,res)=>{
 
@@ -47,12 +22,35 @@ router.post('/createorder',async(req,res)=>{
         }
    
 })
+router.get('/products', async(req, res) => {
+    try{
+        
+        const data = await ORDER.find().sort({_id:-1});
+        res.json(data);
+    }
+    catch(e){
+        res.status(406).json({
+            status:"Failed",
+            message:e.message,
+        })
+    }
+})
+
+router.get('/getOne/:id', async (req, res) => {
+    try{
+        const data = await ORDER.findById(req.params.id);
+        res.json(data)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
 
 router.patch('/update/:id',async(req,res)=>{
     try{
         const id =req.params.id;
         const updateOrder =req.body;
-        const result=await Model.findByIdAndUpdate(
+        const result=await ORDER.findByIdAndUpdate(
             id,updateOrder
         )
         res.send(result)
@@ -64,8 +62,8 @@ router.patch('/update/:id',async(req,res)=>{
 router.delete('/delete/:id',async(req,res)=>{
     try{
         const id =req.params.id;
-        const deleteORDER=await Model.findByIdAndDelete(id)
-        res.send(`data deleted ${deleteORDER.jeans}`)
+        const deleteORDER=await ORDER.findByIdAndDelete(id)
+        res.send(`data deleted ${deleteORDER}`)
     }
     catch(err){
         res.status(400).json({message:err.message})
