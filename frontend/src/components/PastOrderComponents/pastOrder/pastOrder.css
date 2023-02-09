@@ -1,0 +1,23 @@
+.pastOrdercontainer{
+    margin: 10px 15px;
+    width: 1293px;
+    border-collapse: collapse;
+    /* UI Properties */
+}
+
+.pastOrdercontainerHead {
+    background: #383737 0% 0% no-repeat padding-box;
+    height: 35px;
+    border-radius: 3px 3px 0px 0px;
+    border: 1px solid #EAEDF0;
+    border-radius: 3px 3px 0px 0px ;
+    text-align: left;
+    text-transform: capitalize;
+    color: white;
+}
+.pastOrdercontainerBody{
+height: 50px;
+/* UI Properties */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #EAEDF0;
+}
