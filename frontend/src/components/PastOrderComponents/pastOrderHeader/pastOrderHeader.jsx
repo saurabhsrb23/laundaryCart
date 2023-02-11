@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './pastOrderHeader.css'
+import { Link } from 'react-router-dom'
 
 const PastOrderHeader = () => {
 
@@ -7,17 +8,20 @@ const PastOrderHeader = () => {
   return (
     <>
     <section className='pastheaderContainer'>
-    
+    <div className='pastM'>
+
         <div className='leftItem'>
         Orders |{ordersCount}        
         </div>
         <div className='rightItem'>
-                <button className='CreateBtn'>Create</button>
+          <Link to={"/createOrder"}>
+                <button  className='CreateBtn'>Create</button>
+          </Link>
                 <section>
-                {/* <img className='searchlogo'  src={require("./search.png")}alt="search" /> */}
                 <input  className='Search' type="text" />
                 </section>
         </div>
+    </div>
     </section>
     </>
   )

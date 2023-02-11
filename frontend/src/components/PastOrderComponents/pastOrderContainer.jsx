@@ -1,12 +1,15 @@
 import React from 'react'
-import PastOrder from './pastOrder/pastOrder'
-import PastOrderHeader from './pastOrderHeader/pastOrderHeader'
+
+import MainHeader from '../MainHeader/MainHeader'
+import OrderFooter from '../OrderFooter/OrderFooter'
+import SD from './sideNav/sd'
 
 const PastOrderContainer = () => {
   return (
     <>
-    <PastOrderHeader/>
-    <PastOrder/>
+       <MainHeader />
+          <SD />
+      <OrderFooter />
     </>
   )
 }

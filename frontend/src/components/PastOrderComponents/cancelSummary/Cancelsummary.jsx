@@ -1,11 +1,20 @@
 import React from 'react'
+import swal from 'sweetalert';
+import './Cancelsummary.css'
 
-const Cancelsummary = ({cancelOrder}) => {
+const Cancelsummary = () => {
   return (
-    <div>
-        <h3>Alert</h3>
-        <p>Are you sure to cancel the order number 10909</p>
-        <button onClick={cancelOrder}>Proceed</button>
+    <div className=''>
+   {
+    swal({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success",
+      button: "Procced",
+    }).then(function() {
+      window.location = "/pastorder";
+  })
+   }
     </div>
   )
 }

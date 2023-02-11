@@ -8,13 +8,12 @@ const PastSummary = ({closeOrder}) => {
     const cancelOrder =()=>setcancelAlert(false)
 
     const Cancel =()=>{
-        // closeOrder()
-        if(closeOrder){
             setcancelAlert(true)
-        }
     }
   return (
-    <>
+      <>
+      <div className="model-wrapper"></div>
+    <div className="model-container">
     <div className='pastSummaryContainer'>
         <header className='pastSummaryContainerHeader'>
             <p>summary</p>
@@ -22,32 +21,40 @@ const PastSummary = ({closeOrder}) => {
         </header>
             <section className='clientDetails'>
                 <table>
-                    <thead>
-                        <tr>
-
-                        <th>strore Location </th>
-                        <th>strore Address: </th>
-                        <th>phone </th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
 
-                        <td>jp nagar</td>
-                        <td>mdksfkvnfkj</td>
-                        <td>0987658909</td>
+                        <td> <div>strore Location</div> <div>
+                        <select name="" id="">
+                            <option value="jpnagar">jpnagar</option>
+                            </select>
+                            </div> </td>
+                        <td><div>strore Address:</div><div>mdksfkvnfkj</div> </td>
+                        <td><div>Phone</div><div>0987658909</div> </td>
                         </tr>
                     </tbody>
                 </table>
             </section>
         <main>
 
-            {/* <section className='stausBar'>
-                <span>pickup</span>
-                <span>washed</span>
-                <span>ironed</span>
-                <span>delivered</span>
-            </section> */}
+            <section className='stausBar'>
+                <div>
+                <input type="checkbox" />
+                <label>pickup</label>
+                </div>
+                <div>
+                <input type="checkbox" />
+                <label>washed</label>
+                </div>
+                <div>
+                <input type="checkbox" />
+                <label>ironed</label>
+                </div>
+                <div>
+                <input type="checkbox" />
+                <label>delivered</label>
+                </div>
+            </section>
             <section className='orderDetails'>
                 <h5>order Details</h5>
                 <table>
@@ -58,6 +65,7 @@ const PastSummary = ({closeOrder}) => {
                             <td>5X20 =</td>
                             <td>100</td>
                         </tr>
+                
                     </thead>
                     <tbody>
                     <tr>
@@ -104,9 +112,10 @@ const PastSummary = ({closeOrder}) => {
         </main>
             <section className='footerdown'>
                 <button onClick={Cancel} >Cancel Order</button>
+            {cancelAlert&&<Cancelsummary/>}
             </section>
     </div>
-            {cancelAlert&&<Cancelsummary cancelOrder={cancelOrder}/>}
+            </div>
     </>
   )
 }

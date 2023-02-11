@@ -1,18 +1,24 @@
 .pastheaderContainer {
+    height: 10vh;
+    
+}
+.pastM{
     display: flex;
-    margin-top: 10px;
-    width: 1293px;
+   margin:25px auto;
+    width: 95%;
 }
 
 .leftItem {
     margin-right: auto;
-    margin-left: 20px;
+    text-align: left;
+    border: 1px solid green;
+    margin-left: 0px;
 
 }
 
 .rightItem {
     display: flex;
-    margin-right: 20px;
+    margin-right: 0px;
 
 }
 

@@ -1,7 +1,10 @@
+
+
 .pastOrdercontainer{
-    margin: 10px 15px;
-    width: 1293px;
+    margin: 0px auto;
     border-collapse: collapse;
+    width: 95%;
+    text-align: center;
     /* UI Properties */
 }
 
@@ -11,13 +14,24 @@
     border-radius: 3px 3px 0px 0px;
     border: 1px solid #EAEDF0;
     border-radius: 3px 3px 0px 0px ;
-    text-align: left;
+    border: 2px solid rgb(33, 9, 9);
+    text-align: center;
     text-transform: capitalize;
     color: white;
 }
+.pastOrdercontainerHead>tr>th{
+    padding: 0%;
+    text-align: center;
+    
+}
 .pastOrdercontainerBody{
-height: 50px;
+height: 35px;
 /* UI Properties */
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border: 1px solid #EAEDF0;
+}
+
+.pastOrdercontainerBody>td{
+height: 30px;
+text-align: center;
 }
