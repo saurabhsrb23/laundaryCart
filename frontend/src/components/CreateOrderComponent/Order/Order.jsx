@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import SideNav from "../../SideNav/SideNav";
 import MainHeader from "../../MainHeader/MainHeader";
 import OrderFooter from "../../OrderFooter/OrderFooter";
+import F3 from "../../Landingpage/footer3";
 
 const Order = () => {
   return (
@@ -28,6 +29,7 @@ const Order = () => {
         </div>
       </div>
       <OrderFooter />
+      {/* <F3/> */}
     </>
   );
 };

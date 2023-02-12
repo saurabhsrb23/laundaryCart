@@ -19,6 +19,7 @@ require('./SignIn/signInModel/signInModel')
 app.use(express.json())
 
 app.use(require('./Register/register'))
+app.use(require('./SignIn/signIn'))
 app.use(require('./Order/order'))
 app.use("/createorder", ordersroute);
 

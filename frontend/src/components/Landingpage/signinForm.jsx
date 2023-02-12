@@ -1,3 +1,4 @@
+
 import "./styles/landingPageMain.css"
 import "./styles/signinForm.css"
 import "./styles/font-classes.css"
@@ -22,9 +23,22 @@ const SigninForm = () => {
         error.both = null
         // console.log(e.target.value)
     }
-    const handleSignIn = async () => {
-        // e.preventDefault()
-        await axios.post('http://localhost:8080/signin', signInData)
+    const handleSignIn = async (e) => {
+        e.preventDefault()
+        const signInPostData = {
+            emailOrMobile: signInData
+                           .emailOrMobile
+                           .split(" ")
+                           .filter((i) => i!="")
+                           .join("")
+                           .toLowerCase(),
+            password: signInData
+                      .password
+                      .split(" ")
+                      .filter((i) => i!="")
+                      .join("")
+        }
+        await axios.post('http://localhost:8080/signin', signInPostData )
         .then((res) => {
             setSignSuccess(res)
             console.log(res);
