@@ -32,9 +32,9 @@ const RegistrationForm = (props) => {
 
     const postRegForm = async (e) => {
         e.preventDefault()
-        await axios.post('http://localhost:8080/register', regFormData)
+        await axios.post('/register', regFormData)
             .then((res) => {
-                console.log(res)
+                // console.log(res)
                 setRegisterSuccess(true)
                 props.setSize("Big")
                 props.setShowRegForm(false)
@@ -57,7 +57,7 @@ const RegistrationForm = (props) => {
                     setErr({TnC: "You must Agree All the TERM & CONDITIONS"})
                 }
             })
-            console.log(regFormData)
+            // console.log(regFormData)
             //setRegFormData({Name: "", Email: "", Phone: "", State: "", District: "", Address: "", Pincode: "", Password: "", ConfirmPassword: "" , TermsNConditions: ""})
     }
     // useEffect(() => {

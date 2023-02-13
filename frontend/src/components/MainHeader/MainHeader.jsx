@@ -1,9 +1,12 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { Link } from 'react-router-dom'
 import Dp from './profilepic.jpg'
 import './MainHeader.css'
+import {useNavigate} from 'react-router-dom'
 
-const MainHeader = () => {
+const MainHeader = (props) => {
+
+  // console.log(props.user.Name)
     const logout = (e)=>{
         console.log("hi....")
         localStorage.clear()
@@ -17,7 +20,7 @@ const MainHeader = () => {
           <li className="light-text Avenir-14">career</li>
           <div className="header-nav">
             <span><img className='userImg' src={Dp} alt="dp" /></span>
-            <p className='user Avenir-14'>user</p>
+            <p className='user Avenir-14'>{props.user.Name}</p>
             <span>{localStorage.getItem("name")}</span> 
             <Link to={"/"}>
               <span>             

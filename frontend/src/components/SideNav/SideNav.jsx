@@ -10,7 +10,7 @@ import CreateOrder from "../CreateOrderComponent/CreateOrder/CreateOrder";
 
 
 
-const SideNav = () => {
+const SideNav = (props) => {
   return (
     <aside>
 
@@ -32,8 +32,8 @@ const SideNav = () => {
       </ul>
 
       <div className="content">
-        <CreateOrder/>
-          <Products/>
+        <CreateOrder />
+          <Products user={props.user} />
 
       </div>
     </div>

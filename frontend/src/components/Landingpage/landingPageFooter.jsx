@@ -1,6 +1,9 @@
 import "./styles/landingPageFooter.css"
 import "./styles/font-classes.css"
 import F3 from "./footer3";
+const insta =require('./Assets/instagram.jpg')
+const facebook =require('./Assets/facebook.jpg')
+const linkedin=require('./Assets/linkedin.jpg')
 
 const LandingPageFooter = () => {
     return (
@@ -35,13 +38,13 @@ const LandingPageFooter = () => {
                         <h2 className="Avenir-M-18">Social Media</h2>
                         <div id="social-icons-container">
                             <div>
-                                <img className="fb-icon" src="assets/facebook.jpg" alt="Avatar"/>
+                                <img className="fb-icon" src={facebook} alt="Avatar"/>
                             </div>
                             <div>
-                                <img className="insta-icon" src="assets/instagram.jpg" alt="Avatar"/>
+                                <img className="insta-icon" src={insta} alt="Avatar"/>
                             </div>
                             <div>
-                                <img className="linkedin-icon" src="assets/linkedin.jpg" alt="Avatar"/>
+                                <img className="linkedin-icon" src={linkedin} alt="Avatar"/>
                             </div>
                         </div>
                     </div>

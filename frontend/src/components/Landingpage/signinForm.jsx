@@ -38,10 +38,13 @@ const SigninForm = () => {
                       .filter((i) => i!="")
                       .join("")
         }
-        await axios.post('http://localhost:8080/signin', signInPostData )
+        await axios.post('/signin', signInPostData )
         .then((res) => {
             setSignSuccess(res)
-            console.log(res);
+
+                // console.log(res.data.token);
+                // window.localStorage("token",JSON.stringify(res.data.token))
+    
           })
           .catch((err) => {
             console.log(err.response.data);

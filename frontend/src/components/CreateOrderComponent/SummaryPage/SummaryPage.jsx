@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from 'react'
 import "./SummaryPage.css";
 // import { useNavigate } from 'react-router-dom'
 
@@ -7,6 +7,7 @@ import tickpic from "../images/tick.png";
 
 export default function SummaryPage({
   GcancelSummary,
+  user,
   gOrderdata,
   GconfirmOrderSum,
 }) {
@@ -62,8 +63,9 @@ export default function SummaryPage({
       totalitems4 +
       totalitems5 +
       totalitems6);
+      const USER="new User"
 
-  console.log("totalprice", totalprice);
+  // console.log("totalprice", totalprice);
 
   // const [openModel, setOpenModel] = useState(false);
   // console.log( "gOrderdata",gOrderdata)
@@ -89,13 +91,11 @@ export default function SummaryPage({
           <tbody className="body-3">
             <tr>
               <td><tr>
-              <td><select><option>PUNE</option>
-                        <option>MUMBAI</option></select></td>
-              <td className="td1">Jp Nagar</td>
-              <td className="td1">9999999999</td>
+              <td><select><option>{user.District}</option>
+                        </select></td>
+              <td className="td1">{user.Address}</td>
+              <td className="td1">{user.Phone}</td>
             </tr></td>
-              <td className="td1">Jp Nagar</td>
-              <td className="td1">9999999999</td>
             </tr>
           </tbody>
         </table>
@@ -177,7 +177,7 @@ export default function SummaryPage({
                 <img className="tickimage" src={tickpic} alt="selected" />
               </div>
             </div>
-            <div>1-264,newstreet,NED,Maharastra</div>
+            <div>{user.Address+","+user.State+","+user.District}</div>
           </div>
           <div className="Gprevsumaddress">
             <div>

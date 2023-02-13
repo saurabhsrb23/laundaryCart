@@ -5,11 +5,12 @@ import SideNav from "./SideNav/SideNav";
 
 import OrderFooter from "./OrderFooter/OrderFooter";
 
-const RouterLink = () => {
+const RouterLink = (props) => {
+  console.log(props.user)
   return (
     <>
-      <MainHeader />
-          <SideNav />
+      <MainHeader user={props.user} />
+          <SideNav user={props.user} />
       <OrderFooter />
     </>
   );

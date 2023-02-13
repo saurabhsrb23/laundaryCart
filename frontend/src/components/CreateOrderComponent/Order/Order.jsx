@@ -8,10 +8,10 @@ import MainHeader from "../../MainHeader/MainHeader";
 import OrderFooter from "../../OrderFooter/OrderFooter";
 import F3 from "../../Landingpage/footer3";
 
-const Order = () => {
+const Order = (props) => {
   return (
     <>
-      <MainHeader/>
+      <MainHeader user={props.user}/>
       <div className="ordergridContainer">
         <div className="verticalnav">
           <SideNav />

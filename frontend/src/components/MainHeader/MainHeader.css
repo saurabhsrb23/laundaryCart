@@ -28,12 +28,12 @@ margin-right: 0px;
   /* font-weight: bolder; */
   text-decoration: none;
 }
-.light-text:nth-child(1){
+/* .light-text:nth-child(1){
   height: 10vh;
   text-align: center;
   margin-top: 0;
   padding: 20px;
-}
+} */
 .light-text:hover{
   background: #5861AE 0% 0% no-repeat padding-box;
   height: 10vh;
