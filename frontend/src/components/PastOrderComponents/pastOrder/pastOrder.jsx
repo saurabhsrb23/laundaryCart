@@ -5,11 +5,11 @@ import { AiOutlineEye } from 'react-icons/ai';
 import TRproduct from './TRproduct';
 
 // import { Link } from 'react-router-dom'
-const PastOrder = () => {
+const PastOrder = (props) => {
 
   const [products,setProducts]=useState([])
   useEffect(() => {
-    fetch('http://localhost:8080/products').then((res)=>res.json()).then((product)=>{
+    fetch('/products').then((res)=>res.json()).then((product)=>{
       setProducts(product)
     }).catch((err)=>{
       console.log(err)
@@ -40,7 +40,7 @@ const PastOrder = () => {
         <tbody>
           {products.map((product,index)=>{
            return(
-            <TRproduct  key={index} product={product}/>
+            <TRproduct user={props.user}  key={index} product={product}/>
            )
           })
             
