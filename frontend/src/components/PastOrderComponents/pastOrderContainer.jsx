@@ -4,11 +4,11 @@ import MainHeader from '../MainHeader/MainHeader'
 import OrderFooter from '../OrderFooter/OrderFooter'
 import SD from './sideNav/sd'
 
-const PastOrderContainer = () => {
+const PastOrderContainer = (props) => {
   return (
     <>
-       <MainHeader />
-          <SD />
+       <MainHeader user={props.user} />
+          <SD  />
       <OrderFooter />
     </>
   )

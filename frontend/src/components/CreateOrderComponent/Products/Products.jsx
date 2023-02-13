@@ -20,7 +20,7 @@ import Bluetowel from "../logo/blueTowel.svg";
 import Bluebeach from "../logo/bluebeach.svg";
 import { useNavigate } from "react-router-dom";
 
-const Products = () => {
+const Products = (props) => {
     const navigate = useNavigate();
     const gettoken = localStorage.getItem("token");
     console.log(gettoken);
@@ -149,7 +149,6 @@ const Products = () => {
       };
   
       // console.log(gSenddata, "g send data");
-  
       const res = await fetch("http://localhost:8080/createorder", {
         method: "POST",
         headers: {
@@ -159,6 +158,16 @@ const Products = () => {
         },
         body: JSON.stringify(gSenddata),
       });
+  
+      // const res = await fetch("/createorder", {
+      //   method: "POST",
+      //   headers: {
+      //     "content-type": "application/json",
+      //     Accept: "application/json",
+      //     Authorization: token,
+      //   },
+      //   body: JSON.stringify(gSenddata),
+      // });
       // console.log("print");
       setGSummaryStyle("none");
       setorderSucessStyle("block");
@@ -1070,7 +1079,7 @@ const Products = () => {
 
     {GsummaryStyle === "block" && (
       <div className="GsucessSummary1" style={{ display: GsummaryStyle }}>
-        <SummaryPage
+        <SummaryPage user={props.user} 
           GcancelSummary={GcancelSummary}
           gOrderdata={gOrderdata}
           GconfirmOrderSum={GconfirmOrderSum}

@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './pastOrder.css'
 import PastSummary from '../pastSummary/pastSummary'
 import { AiOutlineEye } from 'react-icons/ai';
+import TRproduct from './TRproduct';
 
 // import { Link } from 'react-router-dom'
 const PastOrder = () => {
-  const [showOrder, setshowOrder] = useState(false)
-  const [CanceDirect, setCanceDirect] = useState('cancel order')
 
-  const closeOrder = () => setshowOrder(false);
+  const [products,setProducts]=useState([])
+  useEffect(() => {
+    fetch('http://localhost:8080/products').then((res)=>res.json()).then((product)=>{
+      setProducts(product)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }, [])
+  console.log(products)
+  
 
   return (
     <>
@@ -30,25 +38,18 @@ const PastOrder = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className='pastOrdercontainerBody'>
-            <td> 123345</ td>
-            < td> 09/06/9043</ td>
-            < td> banglore</ td>
-            < td> banglore</ td>
-            < td> td nagar</ td>
-            < td> total Item</ td>
-            < td> 530 </ td>
-            < td> Ready to pickup</ td>
-            < td> <span id='cancelXbtn' onClick={()=>setCanceDirect('Canceled')}>{CanceDirect}</span>  </ td>
-            < td>
-              <AiOutlineEye onClick={() => setshowOrder(true)} />
-            </ td>
-          </tr>
+          {products.map((product,index)=>{
+           return(
+            <TRproduct  key={index} product={product}/>
+           )
+          })
+            
+          }
+         
 
         </tbody>
 
       </table>
-      {showOrder && <PastSummary closeOrder={closeOrder} />}
     </>
   )
 }
