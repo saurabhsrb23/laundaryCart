@@ -70,9 +70,9 @@ export default function SummaryPage({
   // const [openModel, setOpenModel] = useState(false);
   // console.log( "gOrderdata",gOrderdata)
   return (
-    <div className="gorderPrvSummary">
+    <div id='erorr' className="gorderPrvSummary">
       <div className="gHeader1Osum">
-        <span>Summary</span>
+        <div className='sum'>Summary</div>
         <span className="gbuttonOsumcloseCont">
           <button className="gbuttonOsumclose" onClick={() => GcancelSummary()}>
             X
@@ -89,21 +89,19 @@ export default function SummaryPage({
             </tr>
           </thead>
           <tbody className="body-3">
-            <tr>
-              <td><tr>
-              <td><select><option>{user.District}</option>
+            <tr className='err'>
+              <td className='xc'><select className='sl'><option>{user.District}</option>
                         </select></td>
-              <td className="td1">{user.Address}</td>
-              <td className="td1">{user.Phone}</td>
-            </tr></td>
+              <td  className="xc">{user.Address}</td>
+              <td className="xc">{user.Phone}</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div className="gorderSummaryHeader3">
+      <div id='xys' className="gorderSummaryHeader3">
         Orders details :
         <div className="gordersumTable">
-          <table className="table table-hover  ">
+          <table id="table-hover  ">
             <tbody>
               {gOrderdata.shirts.quantity !== 0 && (
                 <GsumOrderRow
