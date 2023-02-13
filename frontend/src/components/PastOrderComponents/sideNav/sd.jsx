@@ -9,7 +9,7 @@ import PastOrder from "../pastOrder/pastOrder";
 
 
 
-const SD = () => {
+const SD = (props) => {
   return (
     <aside>
 
@@ -31,7 +31,7 @@ const SD = () => {
 
       <div className="content">
           <PastOrderHeader/>
-          <PastOrder/>
+          <PastOrder user={props.user} />
 
       </div>
     </div>

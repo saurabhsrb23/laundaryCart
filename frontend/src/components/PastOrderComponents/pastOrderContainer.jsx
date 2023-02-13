@@ -8,7 +8,7 @@ const PastOrderContainer = (props) => {
   return (
     <>
        <MainHeader user={props.user} />
-          <SD  />
+          <SD user={props.user}   />
       <OrderFooter />
     </>
   )
